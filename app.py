@@ -98,13 +98,12 @@ print("Países incluidos:", analysis_df["country"].nunique())
 print("Registros incluidos:", len(analysis_df))
 print("Valores faltantes principales (%):")
 
-display(
+print(
     analysis_df.isna()
     .mean()
     .mul(100)
     .round(2)
     .sort_values(ascending=False)
-    .to_frame("porcentaje_faltante")
     .head(10)
 )
 
@@ -236,7 +235,7 @@ dashboard_summary = summary[
     ]
 ].copy()
 
-display(dashboard_summary.head())
+print(dashboard_summary.head())
 
 # ============================================================
 # 5. VALIDACIONES Y HALLAZGOS
